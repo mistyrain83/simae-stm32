@@ -94,8 +94,8 @@
         <TargetDlgDllArguments>-pSTM32F103VE</TargetDlgDllArguments>
       </DllOpt>
       <DebugOpt>
-        <uSim>1</uSim>
-        <uTrg>0</uTrg>
+        <uSim>0</uSim>
+        <uTrg>1</uTrg>
         <sLdApp>1</sLdApp>
         <sGomain>1</sGomain>
         <sRbreak>1</sRbreak>
@@ -104,7 +104,7 @@
         <sRfunc>1</sRfunc>
         <sRbox>1</sRbox>
         <tLdApp>1</tLdApp>
-        <tGomain>0</tGomain>
+        <tGomain>1</tGomain>
         <tRbreak>1</tRbreak>
         <tRwatch>1</tRwatch>
         <tRmem>1</tRmem>
@@ -112,7 +112,7 @@
         <tRbox>1</tRbox>
         <sRunDeb>0</sRunDeb>
         <sLrtime>0</sLrtime>
-        <nTsel>0</nTsel>
+        <nTsel>7</nTsel>
         <sDll></sDll>
         <sDllPa></sDllPa>
         <sDlgDll></sDlgDll>
@@ -123,9 +123,24 @@
         <tDlgDll></tDlgDll>
         <tDlgPa></tDlgPa>
         <tIfile></tIfile>
-        <pMon>BIN\UL2CM3.DLL</pMon>
+        <pMon>Segger\JL2CM3.dll</pMon>
       </DebugOpt>
       <TargetDriverDllRegistry>
+        <SetRegEntry>
+          <Number>0</Number>
+          <Key>DLGTARM</Key>
+          <Name>(1010=-1,-1,-1,-1,0)(1007=-1,-1,-1,-1,0)(1008=-1,-1,-1,-1,0)(1009=-1,-1,-1,-1,0)(100=-1,-1,-1,-1,0)(110=-1,-1,-1,-1,0)(111=-1,-1,-1,-1,0)(1011=-1,-1,-1,-1,0)(180=-1,-1,-1,-1,0)(120=-1,-1,-1,-1,0)(121=-1,-1,-1,-1,0)(122=-1,-1,-1,-1,0)(123=-1,-1,-1,-1,0)(124=-1,-1,-1,-1,0)(125=-1,-1,-1,-1,0)(126=-1,-1,-1,-1,0)(140=-1,-1,-1,-1,0)(240=-1,-1,-1,-1,0)(190=-1,-1,-1,-1,0)(200=-1,-1,-1,-1,0)(170=-1,-1,-1,-1,0)(130=-1,-1,-1,-1,0)(131=-1,-1,-1,-1,0)(132=-1,-1,-1,-1,0)(133=-1,-1,-1,-1,0)(160=-1,-1,-1,-1,0)(161=-1,-1,-1,-1,0)(162=-1,-1,-1,-1,0)(210=-1,-1,-1,-1,0)(211=-1,-1,-1,-1,0)(220=-1,-1,-1,-1,0)(221=-1,-1,-1,-1,0)(230=-1,-1,-1,-1,0)(231=-1,-1,-1,-1,0)(232=-1,-1,-1,-1,0)(233=-1,-1,-1,-1,0)(150=-1,-1,-1,-1,0)(151=-1,-1,-1,-1,0)</Name>
+        </SetRegEntry>
+        <SetRegEntry>
+          <Number>0</Number>
+          <Key>DLGUARM</Key>
+          <Name>(106=-1,-1,-1,-1,0)(107=-1,-1,-1,-1,0)</Name>
+        </SetRegEntry>
+        <SetRegEntry>
+          <Number>0</Number>
+          <Key>JL2CM3</Key>
+          <Name>-U17935099 -O14 -S0 -A0 -C0 -JU1 -JI127.0.0.1 -JP0 -RST0 -N00("ARM CoreSight JTAG-DP") -D00(3BA00477) -L00(4) -N01("Unknown JTAG device") -D01(06414041) -L01(5) -TO18 -TC10000000 -TP21 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -TB1 -TFE0 -FO15 -FD20000000 -FC800 -FN1 -FF0STM32F10x_512 -FS08000000 -FL080000</Name>
+        </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGDARM</Key>
@@ -146,9 +161,9 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>65</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134218322</Address>
+          <LineNumber>89</LineNumber>
+          <EnabledFlag>0</EnabledFlag>
+          <Address>134218532</Address>
           <ByteObject>0</ByteObject>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
@@ -156,7 +171,22 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename></Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\emc_ae\User/Src/main.c\65</Expression>
+          <Expression>\\emc_ae\User/Src/main.c\89</Expression>
+        </Bp>
+        <Bp>
+          <Number>1</Number>
+          <Type>0</Type>
+          <LineNumber>72</LineNumber>
+          <EnabledFlag>0</EnabledFlag>
+          <Address>134218388</Address>
+          <ByteObject>0</ByteObject>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename></Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\emc_ae\User/Src/main.c\72</Expression>
         </Bp>
       </Breakpoint>
       <DebugFlag>
@@ -207,7 +237,7 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>24</ColumnNumber>
+      <ColumnNumber>50</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>66</TopLine>
       <CurrentLine>72</CurrentLine>
@@ -221,10 +251,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>11</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>49</TopLine>
-      <CurrentLine>55</CurrentLine>
+      <TopLine>147</TopLine>
+      <CurrentLine>154</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\User\Src\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
@@ -235,24 +265,66 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
+      <ColumnNumber>16</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>46</TopLine>
+      <CurrentLine>46</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\User\Src\stm32f10x_it.c</PathWithFileName>
+      <FilenameWithoutPath>stm32f10x_it.c</FilenameWithoutPath>
+    </File>
+    <File>
+      <GroupNumber>1</GroupNumber>
+      <FileNumber>4</FileNumber>
+      <FileType>5</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>0</TopLine>
       <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\User\Src\stm32f10x_it.c</PathWithFileName>
-      <FilenameWithoutPath>stm32f10x_it.c</FilenameWithoutPath>
+      <PathWithFileName>.\User\Inc\gpio.h</PathWithFileName>
+      <FilenameWithoutPath>gpio.h</FilenameWithoutPath>
+    </File>
+    <File>
+      <GroupNumber>1</GroupNumber>
+      <FileNumber>5</FileNumber>
+      <FileType>5</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>0</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\User\Inc\stm32f10x_conf.h</PathWithFileName>
+      <FilenameWithoutPath>stm32f10x_conf.h</FilenameWithoutPath>
+    </File>
+    <File>
+      <GroupNumber>1</GroupNumber>
+      <FileNumber>6</FileNumber>
+      <FileType>5</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>0</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\User\Inc\stm32f10x_it.h</PathWithFileName>
+      <FilenameWithoutPath>stm32f10x_it.h</FilenameWithoutPath>
     </File>
   </Group>
 
   <Group>
     <GroupName>CMSIS</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <File>
       <GroupNumber>2</GroupNumber>
-      <FileNumber>4</FileNumber>
+      <FileNumber>7</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -266,7 +338,7 @@
     </File>
     <File>
       <GroupNumber>2</GroupNumber>
-      <FileNumber>5</FileNumber>
+      <FileNumber>8</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -287,7 +359,7 @@
     <cbSel>0</cbSel>
     <File>
       <GroupNumber>3</GroupNumber>
-      <FileNumber>6</FileNumber>
+      <FileNumber>9</FileNumber>
       <FileType>2</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -308,7 +380,7 @@
     <cbSel>0</cbSel>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>7</FileNumber>
+      <FileNumber>10</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -322,7 +394,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>8</FileNumber>
+      <FileNumber>11</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -336,7 +408,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>9</FileNumber>
+      <FileNumber>12</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -350,7 +422,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>10</FileNumber>
+      <FileNumber>13</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -364,7 +436,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>11</FileNumber>
+      <FileNumber>14</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -378,7 +450,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>12</FileNumber>
+      <FileNumber>15</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -392,7 +464,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>13</FileNumber>
+      <FileNumber>16</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -406,7 +478,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>14</FileNumber>
+      <FileNumber>17</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -420,7 +492,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>15</FileNumber>
+      <FileNumber>18</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -434,7 +506,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>16</FileNumber>
+      <FileNumber>19</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -448,7 +520,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>17</FileNumber>
+      <FileNumber>20</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -462,7 +534,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>18</FileNumber>
+      <FileNumber>21</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -476,21 +548,21 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>19</FileNumber>
+      <FileNumber>22</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>25</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>0</TopLine>
-      <CurrentLine>0</CurrentLine>
+      <TopLine>395</TopLine>
+      <CurrentLine>401</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\StdPeriph_Driver\src\stm32f10x_gpio.c</PathWithFileName>
       <FilenameWithoutPath>stm32f10x_gpio.c</FilenameWithoutPath>
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>20</FileNumber>
+      <FileNumber>23</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -504,7 +576,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>21</FileNumber>
+      <FileNumber>24</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -518,7 +590,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>22</FileNumber>
+      <FileNumber>25</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -532,7 +604,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>23</FileNumber>
+      <FileNumber>26</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -546,7 +618,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>24</FileNumber>
+      <FileNumber>27</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -560,7 +632,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>25</FileNumber>
+      <FileNumber>28</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -574,7 +646,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>26</FileNumber>
+      <FileNumber>29</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -588,7 +660,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>27</FileNumber>
+      <FileNumber>30</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -602,7 +674,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>28</FileNumber>
+      <FileNumber>31</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -616,7 +688,7 @@
     </File>
     <File>
       <GroupNumber>4</GroupNumber>
-      <FileNumber>29</FileNumber>
+      <FileNumber>32</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
@@ -631,9 +703,87 @@
   </Group>
 
   <AlienFiles>
-    <PathWithFilename>D:\projects\emcae-stm32\StdPeriph_Driver\inc\stm32f10x_gpio.h</PathWithFilename>
-    <TopLine>96</TopLine>
-    <CurrentLine>96</CurrentLine>
+    <PathWithFilename>D:\GitHub\simae-stm32\CMSIS\stm32f10x.h</PathWithFilename>
+    <TopLine>956</TopLine>
+    <CurrentLine>956</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
+
+  <AlienFiles>
+    <PathWithFilename>D:\GitHub\simae-stm32\StdPeriph_Driver\inc\stm32f10x_gpio.h</PathWithFilename>
+    <TopLine>52</TopLine>
+    <CurrentLine>52</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
+
+  <AlienFiles>
+    <PathWithFilename>D:\GitHub\simae-stm32\User\Inc\stm32_emcae.h</PathWithFilename>
+    <TopLine>1</TopLine>
+    <CurrentLine>6</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
+
+  <AlienFiles>
+    <PathWithFilename>D:\GitHub\simae-stm32\User\Inc\main.h</PathWithFilename>
+    <TopLine>22</TopLine>
+    <CurrentLine>28</CurrentLine>
     <Constant>0</Constant>
     <WindowPosition>
       <length>0</length>
@@ -661,25 +811,61 @@
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
       <Size>100</Size>
-      <ActiveTab>2</ActiveTab>
+      <ActiveTab>8</ActiveTab>
       <Documents>
         <Doc>
           <Name>.\User\Src\main.c</Name>
-          <ColumnNumber>11</ColumnNumber>
-          <TopLine>49</TopLine>
-          <CurrentLine>55</CurrentLine>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>147</TopLine>
+          <CurrentLine>154</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\User\Src\gpio.c</Name>
-          <ColumnNumber>24</ColumnNumber>
+          <ColumnNumber>50</ColumnNumber>
           <TopLine>66</TopLine>
           <CurrentLine>72</CurrentLine>
         </Doc>
         <Doc>
+          <Name>.\User\Inc\gpio.h</Name>
+          <ColumnNumber>14</ColumnNumber>
+          <TopLine>25</TopLine>
+          <CurrentLine>25</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\User\Src\stm32f10x_it.c</Name>
+          <ColumnNumber>16</ColumnNumber>
+          <TopLine>46</TopLine>
+          <CurrentLine>46</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\User\Inc\main.h</Name>
+          <ColumnNumber>21</ColumnNumber>
+          <TopLine>22</TopLine>
+          <CurrentLine>28</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\User\Inc\stm32_emcae.h</Name>
+          <ColumnNumber>18</ColumnNumber>
+          <TopLine>1</TopLine>
+          <CurrentLine>6</CurrentLine>
+        </Doc>
+        <Doc>
           <Name>.\StdPeriph_Driver\inc\stm32f10x_gpio.h</Name>
-          <ColumnNumber>20</ColumnNumber>
-          <TopLine>96</TopLine>
-          <CurrentLine>96</CurrentLine>
+          <ColumnNumber>8</ColumnNumber>
+          <TopLine>52</TopLine>
+          <CurrentLine>52</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\StdPeriph_Driver\src\stm32f10x_gpio.c</Name>
+          <ColumnNumber>25</ColumnNumber>
+          <TopLine>395</TopLine>
+          <CurrentLine>401</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\CMSIS\stm32f10x.h</Name>
+          <ColumnNumber>23</ColumnNumber>
+          <TopLine>956</TopLine>
+          <CurrentLine>956</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>

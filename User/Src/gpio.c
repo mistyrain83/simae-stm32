@@ -64,17 +64,20 @@ void MX_GPIO_Init(void)
   /*Configure GPIO pin : PC */
   GPIO_InitStruct.GPIO_Pin = GPIO_Pin_0|GPIO_Pin_1|GPIO_Pin_2|GPIO_Pin_3;
   GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
+  GPIO_InitStruct.GPIO_Mode = GPIO_Mode_Out_PP;
   GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PE */
   GPIO_InitStruct.GPIO_Pin = GPIO_Pin_8|GPIO_Pin_9|GPIO_Pin_10|GPIO_Pin_11 
                           |GPIO_Pin_12|GPIO_Pin_13;
   GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
+  GPIO_InitStruct.GPIO_Mode = GPIO_Mode_Out_PP;
   GPIO_Init(GPIOE, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PD */
   GPIO_InitStruct.GPIO_Pin = GPIO_Pin_0|GPIO_Pin_1|GPIO_Pin_2|GPIO_Pin_3 
                           |GPIO_Pin_4|GPIO_Pin_5|GPIO_Pin_6|GPIO_Pin_7;
+  GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IPD;
   GPIO_Init(GPIOD, &GPIO_InitStruct);
 
   /** USART2 GPIO Configuration  

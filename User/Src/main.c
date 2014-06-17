@@ -34,9 +34,18 @@
 
 /* Includes ------------------------------------------------------------------*/
 //#include "stm32f1xx_hal.h"
+#include "main.h"
 #include "gpio.h"
 
 /* Private variables ---------------------------------------------------------*/
+static __IO uint32_t TimingDelay;
+
+/* Private function prototypes -----------------------------------------------*/
+void Delay(__IO uint32_t nTime);
+void STM_EMCAE_LEDAllOn(void);
+void STM_EMCAE_LEDAllOff(void);
+
+/* Private functions ---------------------------------------------------------*/
 
 /* USER CODE BEGIN 0 */
 
@@ -59,10 +68,43 @@ int main(void)
   /* USER CODE END 2 */
 
   /* USER CODE BEGIN 3 */
+  // off
+  GPIO_SetBits(GPIOC, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3);
+  GPIO_SetBits(GPIOE, GPIO_Pin_8|GPIO_Pin_9|GPIO_Pin_10|GPIO_Pin_11 
+                          |GPIO_Pin_12|GPIO_Pin_13);
+
+  /* Setup Sys Clock */
+  if (SysTick_Config(SystemCoreClock / 1000))
+  { 
+    /* Capture error */ 
+    while (1);
+  }
+
+
   /* Infinite loop */
   while (1)
   {
-	   GPIO_SetBits(GPIOC, GPIO_Pin_0);
+  STM_EMCAE_LEDAllOff();
+  Delay(1000);
+	  GPIO_Write(GPIOC, GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3);
+		/* Insert 1000 ms delay */
+		Delay(1000);
+		GPIO_Write(GPIOC, GPIO_Pin_0 | GPIO_Pin_2 | GPIO_Pin_3);
+		//GPIO_SetBits(GPIOC, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3);
+
+		Delay(1000);
+		GPIO_Write(GPIOC, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_3);
+
+		Delay(1000);
+		GPIO_Write(GPIOC, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2);
+
+		Delay(1000);
+		//GPIO_Write(GPIOC, GPIO_Pin_0 | GPIO_Pin_2 | GPIO_Pin_3);
+		//GPIO_ResetBits(GPIOC, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3);
+		STM_EMCAE_LEDAllOn();
+		
+		/* Insert 1000 ms delay */
+		Delay(1000);
   }
   /* USER CODE END 3 */
 
@@ -70,6 +112,60 @@ int main(void)
 
 /* USER CODE BEGIN 4 */
 
+/**
+  * @brief  Turns selected LED On.
+  * @param  Led: Specifies the Led to be set on. 
+  *   This parameter can be one of following parameters:
+  *     @arg LED1
+  *     @arg LED2
+  *     @arg LED3
+  *     @arg LED4  
+  * @retval None
+  */
+void STM_EMCAE_LEDAllOn(void)
+{
+	GPIO_WriteBit(GPIOC, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3, Bit_RESET);
+}
+
+/**
+  * @brief  Turns selected LED Off.
+  * @param  Led: Specifies the Led to be set off. 
+  *   This parameter can be one of following parameters:
+  *     @arg LED1
+  *     @arg LED2
+  *     @arg LED3
+  *     @arg LED4 
+  * @retval None
+  */
+void STM_EMCAE_LEDAllOff(void)
+{
+  GPIO_WriteBit(GPIOC, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3, Bit_SET);  
+}
+
+/**
+  * @brief  Inserts a delay time.
+  * @param  nTime: specifies the delay time length, in milliseconds.
+  * @retval None
+  */
+void Delay(__IO uint32_t nTime)
+{ 
+  TimingDelay = nTime;
+
+  while(TimingDelay != 0);
+}
+
+/**
+  * @brief  Decrements the TimingDelay variable.
+  * @param  None
+  * @retval None
+  */
+void TimingDelay_Decrement(void)
+{
+  if (TimingDelay != 0x00)
+  { 
+    TimingDelay--;
+  }
+}
 /* USER CODE END 4 */
 
 #ifdef USE_FULL_ASSERT

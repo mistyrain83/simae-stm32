@@ -38,7 +38,7 @@
 ### ADS-LD Output File: '.\obj\emc_ae.axf'
 ### ADS-LD Command File: '.\obj\emc_ae.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile '.\obj\emc_ae.lnp', Handle=0x000001D0
+### Creating CmdFile '.\obj\emc_ae.lnp', Handle=0x00000B9C
 ### Writing '.lnp' file
 ### ADS-LD Command file '.\obj\emc_ae.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.
