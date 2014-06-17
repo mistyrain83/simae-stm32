@@ -1,0 +1,3 @@
+---- SysTick_CLKSourceConfig Matches (2 in 2 files) ----
+Misc.c (stdperiph_driver\src):void SysTick_CLKSourceConfig(uint32_t SysTick_CLKSource)
+Misc.h (stdperiph_driver\inc):void SysTick_CLKSourceConfig(uint32_t SysTick_CLKSource);
