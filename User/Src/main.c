@@ -36,6 +36,7 @@
 //#include "stm32f1xx_hal.h"
 #include "main.h"
 #include "gpio.h"
+#include "led.h"
 
 /* Private variables ---------------------------------------------------------*/
 static __IO uint32_t TimingDelay;
@@ -69,42 +70,37 @@ int main(void)
 
   /* USER CODE BEGIN 3 */
   // off
-  GPIO_SetBits(GPIOC, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3);
+  led_init();
   GPIO_SetBits(GPIOE, GPIO_Pin_8|GPIO_Pin_9|GPIO_Pin_10|GPIO_Pin_11 
                           |GPIO_Pin_12|GPIO_Pin_13);
 
   /* Setup Sys Clock */
-  if (SysTick_Config(SystemCoreClock / 1000))
+  if (SysTick_Config(SystemCoreClock / 100))   // 10ms
   { 
     /* Capture error */ 
     while (1);
   }
+  
+   /* 写入0x5555,用于允许狗狗寄存器写入功能 */
+  IWDG_WriteAccessCmd(IWDG_WriteAccess_Enable);
 
+  /* 狗狗时钟分频,40K/256=156HZ(6.4ms)*/
+	IWDG_SetPrescaler(IWDG_Prescaler_256);
+	
+	/* 喂狗时间 5s/6.4MS=781 .注意不能大于0xfff*/
+	IWDG_SetReload(781);
+	
+	/* 喂狗*/
+	IWDG_ReloadCounter();
+	
+	/* 使能狗狗*/
+	IWDG_Enable();
 
   /* Infinite loop */
   while (1)
   {
-  STM_EMCAE_LEDAllOff();
-  Delay(1000);
-	  GPIO_Write(GPIOC, GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3);
-		/* Insert 1000 ms delay */
-		Delay(1000);
-		GPIO_Write(GPIOC, GPIO_Pin_0 | GPIO_Pin_2 | GPIO_Pin_3);
-		//GPIO_SetBits(GPIOC, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3);
-
-		Delay(1000);
-		GPIO_Write(GPIOC, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_3);
-
-		Delay(1000);
-		GPIO_Write(GPIOC, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2);
-
-		Delay(1000);
-		//GPIO_Write(GPIOC, GPIO_Pin_0 | GPIO_Pin_2 | GPIO_Pin_3);
-		//GPIO_ResetBits(GPIOC, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3);
-		STM_EMCAE_LEDAllOn();
-		
-		/* Insert 1000 ms delay */
-		Delay(1000);
+  		IWDG_ReloadCounter();  // feed dog
+		PWR_EnterSTOPMode(PWR_Regulator_ON, PWR_STOPEntry_WFI); // go to sleep
   }
   /* USER CODE END 3 */
 
@@ -112,35 +108,6 @@ int main(void)
 
 /* USER CODE BEGIN 4 */
 
-/**
-  * @brief  Turns selected LED On.
-  * @param  Led: Specifies the Led to be set on. 
-  *   This parameter can be one of following parameters:
-  *     @arg LED1
-  *     @arg LED2
-  *     @arg LED3
-  *     @arg LED4  
-  * @retval None
-  */
-void STM_EMCAE_LEDAllOn(void)
-{
-	GPIO_WriteBit(GPIOC, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3, Bit_RESET);
-}
-
-/**
-  * @brief  Turns selected LED Off.
-  * @param  Led: Specifies the Led to be set off. 
-  *   This parameter can be one of following parameters:
-  *     @arg LED1
-  *     @arg LED2
-  *     @arg LED3
-  *     @arg LED4 
-  * @retval None
-  */
-void STM_EMCAE_LEDAllOff(void)
-{
-  GPIO_WriteBit(GPIOC, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3, Bit_SET);  
-}
 
 /**
   * @brief  Inserts a delay time.
