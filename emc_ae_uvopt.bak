@@ -251,10 +251,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>20</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>147</TopLine>
-      <CurrentLine>154</CurrentLine>
+      <TopLine>73</TopLine>
+      <CurrentLine>77</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\User\Src\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
@@ -811,13 +811,13 @@
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
       <Size>100</Size>
-      <ActiveTab>8</ActiveTab>
+      <ActiveTab>0</ActiveTab>
       <Documents>
         <Doc>
           <Name>.\User\Src\main.c</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>147</TopLine>
-          <CurrentLine>154</CurrentLine>
+          <ColumnNumber>20</ColumnNumber>
+          <TopLine>73</TopLine>
+          <CurrentLine>77</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\User\Src\gpio.c</Name>
@@ -838,19 +838,19 @@
           <CurrentLine>46</CurrentLine>
         </Doc>
         <Doc>
-          <Name>.\User\Inc\main.h</Name>
+          <Name>D:\GitHub\simae-stm32\User\Inc\main.h</Name>
           <ColumnNumber>21</ColumnNumber>
           <TopLine>22</TopLine>
           <CurrentLine>28</CurrentLine>
         </Doc>
         <Doc>
-          <Name>.\User\Inc\stm32_emcae.h</Name>
+          <Name>D:\GitHub\simae-stm32\User\Inc\stm32_emcae.h</Name>
           <ColumnNumber>18</ColumnNumber>
           <TopLine>1</TopLine>
           <CurrentLine>6</CurrentLine>
         </Doc>
         <Doc>
-          <Name>.\StdPeriph_Driver\inc\stm32f10x_gpio.h</Name>
+          <Name>D:\GitHub\simae-stm32\StdPeriph_Driver\inc\stm32f10x_gpio.h</Name>
           <ColumnNumber>8</ColumnNumber>
           <TopLine>52</TopLine>
           <CurrentLine>52</CurrentLine>
@@ -862,7 +862,7 @@
           <CurrentLine>401</CurrentLine>
         </Doc>
         <Doc>
-          <Name>.\CMSIS\stm32f10x.h</Name>
+          <Name>D:\GitHub\simae-stm32\CMSIS\stm32f10x.h</Name>
           <ColumnNumber>23</ColumnNumber>
           <TopLine>956</TopLine>
           <CurrentLine>956</CurrentLine>

@@ -139,7 +139,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>JL2CM3</Key>
-          <Name>-U17935099 -O14 -S0 -A0 -C0 -JU1 -JI127.0.0.1 -JP0 -RST0 -N00("ARM CoreSight JTAG-DP") -D00(3BA00477) -L00(4) -N01("Unknown JTAG device") -D01(06414041) -L01(5) -TO18 -TC10000000 -TP21 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -TB1 -TFE0 -FO15 -FD20000000 -FC800 -FN1 -FF0STM32F10x_512 -FS08000000 -FL080000</Name>
+          <Name>-U304230680 -O14 -S0 -A0 -C0 -JU1 -JI127.0.0.1 -JP0 -RST0 -N00("ARM CoreSight JTAG-DP") -D00(3BA00477) -L00(4) -N01("Unknown JTAG device") -D01(06414041) -L01(5) -TO18 -TC10000000 -TP21 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -TB1 -TFE0 -FO15 -FD20000000 -FC800 -FN1 -FF0STM32F10x_512 -FS08000000 -FL080000</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -163,7 +163,7 @@
           <Type>0</Type>
           <LineNumber>89</LineNumber>
           <EnabledFlag>0</EnabledFlag>
-          <Address>134218532</Address>
+          <Address>134218530</Address>
           <ByteObject>0</ByteObject>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
@@ -217,12 +217,6 @@
       </DebugFlag>
       <LintExecutable></LintExecutable>
       <LintConfigFile></LintConfigFile>
-      <SystemViewers>
-        <Entry>
-          <Name>System Viewer\GPIOC</Name>
-          <WinId>35905</WinId>
-        </Entry>
-      </SystemViewers>
     </TargetOption>
   </Target>
 
@@ -251,10 +245,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>20</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>73</TopLine>
-      <CurrentLine>77</CurrentLine>
+      <TopLine>1</TopLine>
+      <CurrentLine>1</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\User\Src\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
@@ -265,7 +259,7 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>16</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
       <TopLine>46</TopLine>
       <CurrentLine>46</CurrentLine>
@@ -314,6 +308,20 @@
       <bDave2>0</bDave2>
       <PathWithFileName>.\User\Inc\stm32f10x_it.h</PathWithFileName>
       <FilenameWithoutPath>stm32f10x_it.h</FilenameWithoutPath>
+    </File>
+    <File>
+      <GroupNumber>1</GroupNumber>
+      <FileNumber>0</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>47</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>1</TopLine>
+      <CurrentLine>15</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>.\User\Src\io.c</PathWithFileName>
+      <FilenameWithoutPath>io.c</FilenameWithoutPath>
     </File>
   </Group>
 
@@ -702,170 +710,30 @@
     </File>
   </Group>
 
-  <AlienFiles>
-    <PathWithFilename>D:\GitHub\simae-stm32\CMSIS\stm32f10x.h</PathWithFilename>
-    <TopLine>956</TopLine>
-    <CurrentLine>956</CurrentLine>
-    <Constant>0</Constant>
-    <WindowPosition>
-      <length>0</length>
-      <flags>0</flags>
-      <showCmd>0</showCmd>
-      <MinPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MinPosition>
-      <MaxPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MaxPosition>
-      <NormalPosition>
-        <Top>0</Top>
-        <Left>0</Left>
-        <Right>0</Right>
-        <Bottom>0</Bottom>
-      </NormalPosition>
-    </WindowPosition>
-  </AlienFiles>
-
-  <AlienFiles>
-    <PathWithFilename>D:\GitHub\simae-stm32\StdPeriph_Driver\inc\stm32f10x_gpio.h</PathWithFilename>
-    <TopLine>52</TopLine>
-    <CurrentLine>52</CurrentLine>
-    <Constant>0</Constant>
-    <WindowPosition>
-      <length>0</length>
-      <flags>0</flags>
-      <showCmd>0</showCmd>
-      <MinPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MinPosition>
-      <MaxPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MaxPosition>
-      <NormalPosition>
-        <Top>0</Top>
-        <Left>0</Left>
-        <Right>0</Right>
-        <Bottom>0</Bottom>
-      </NormalPosition>
-    </WindowPosition>
-  </AlienFiles>
-
-  <AlienFiles>
-    <PathWithFilename>D:\GitHub\simae-stm32\User\Inc\stm32_emcae.h</PathWithFilename>
-    <TopLine>1</TopLine>
-    <CurrentLine>6</CurrentLine>
-    <Constant>0</Constant>
-    <WindowPosition>
-      <length>0</length>
-      <flags>0</flags>
-      <showCmd>0</showCmd>
-      <MinPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MinPosition>
-      <MaxPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MaxPosition>
-      <NormalPosition>
-        <Top>0</Top>
-        <Left>0</Left>
-        <Right>0</Right>
-        <Bottom>0</Bottom>
-      </NormalPosition>
-    </WindowPosition>
-  </AlienFiles>
-
-  <AlienFiles>
-    <PathWithFilename>D:\GitHub\simae-stm32\User\Inc\main.h</PathWithFilename>
-    <TopLine>22</TopLine>
-    <CurrentLine>28</CurrentLine>
-    <Constant>0</Constant>
-    <WindowPosition>
-      <length>0</length>
-      <flags>0</flags>
-      <showCmd>0</showCmd>
-      <MinPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MinPosition>
-      <MaxPosition>
-        <xPos>0</xPos>
-        <yPos>0</yPos>
-      </MaxPosition>
-      <NormalPosition>
-        <Top>0</Top>
-        <Left>0</Left>
-        <Right>0</Right>
-        <Bottom>0</Bottom>
-      </NormalPosition>
-    </WindowPosition>
-  </AlienFiles>
-
   <MDIGroups>
     <Orientation>1</Orientation>
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
       <Size>100</Size>
-      <ActiveTab>0</ActiveTab>
+      <ActiveTab>2</ActiveTab>
       <Documents>
         <Doc>
+          <Name>.\StartUp\startup_stm32f10x_hd.s</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>151</TopLine>
+          <CurrentLine>151</CurrentLine>
+        </Doc>
+        <Doc>
           <Name>.\User\Src\main.c</Name>
-          <ColumnNumber>20</ColumnNumber>
-          <TopLine>73</TopLine>
-          <CurrentLine>77</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\User\Src\gpio.c</Name>
-          <ColumnNumber>50</ColumnNumber>
-          <TopLine>66</TopLine>
-          <CurrentLine>72</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\User\Inc\gpio.h</Name>
-          <ColumnNumber>14</ColumnNumber>
-          <TopLine>25</TopLine>
-          <CurrentLine>25</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\User\Src\stm32f10x_it.c</Name>
-          <ColumnNumber>16</ColumnNumber>
-          <TopLine>46</TopLine>
-          <CurrentLine>46</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>D:\GitHub\simae-stm32\User\Inc\main.h</Name>
-          <ColumnNumber>21</ColumnNumber>
-          <TopLine>22</TopLine>
-          <CurrentLine>28</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>D:\GitHub\simae-stm32\User\Inc\stm32_emcae.h</Name>
-          <ColumnNumber>18</ColumnNumber>
+          <ColumnNumber>0</ColumnNumber>
           <TopLine>1</TopLine>
-          <CurrentLine>6</CurrentLine>
+          <CurrentLine>1</CurrentLine>
         </Doc>
         <Doc>
-          <Name>D:\GitHub\simae-stm32\StdPeriph_Driver\inc\stm32f10x_gpio.h</Name>
-          <ColumnNumber>8</ColumnNumber>
-          <TopLine>52</TopLine>
-          <CurrentLine>52</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>.\StdPeriph_Driver\src\stm32f10x_gpio.c</Name>
-          <ColumnNumber>25</ColumnNumber>
-          <TopLine>395</TopLine>
-          <CurrentLine>401</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>D:\GitHub\simae-stm32\CMSIS\stm32f10x.h</Name>
-          <ColumnNumber>23</ColumnNumber>
-          <TopLine>956</TopLine>
-          <CurrentLine>956</CurrentLine>
+          <Name>.\User\Src\io.c</Name>
+          <ColumnNumber>47</ColumnNumber>
+          <TopLine>1</TopLine>
+          <CurrentLine>15</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>
