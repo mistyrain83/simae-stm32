@@ -136,8 +136,8 @@ void PendSV_Handler(void)
   */
 void SysTick_Handler(void)
 {
-	TimingDelay_Decrement();
-	SyncIO();
+	//TimingDelay_Decrement();
+	//SyncIO();
 }
 
 /******************************************************************************/
@@ -159,6 +159,7 @@ void SysTick_Handler(void)
 /**
   * @}
   */ 
+
 
 
 /******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/

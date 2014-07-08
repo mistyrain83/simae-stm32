@@ -59,7 +59,13 @@ void MX_GPIO_Init(void)
   */
 
   /*Enable or disable APB2 peripheral clock */
-  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC|RCC_APB2Periph_GPIOE|RCC_APB2Periph_GPIOD, ENABLE);
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA|RCC_APB2Periph_GPIOC|RCC_APB2Periph_GPIOE|RCC_APB2Periph_GPIOD, ENABLE);
+
+  /*Configure GPIO pin : PA */
+  GPIO_InitStruct.GPIO_Pin = GPIO_Pin_0;
+  GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
+  GPIO_InitStruct.GPIO_Mode = GPIO_Mode_Out_PP;
+  GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PC */
   GPIO_InitStruct.GPIO_Pin = GPIO_Pin_0|GPIO_Pin_1|GPIO_Pin_2|GPIO_Pin_3;
@@ -86,12 +92,14 @@ void MX_GPIO_Init(void)
   */
 
   /*Enable or disable APB2 peripheral clock */
-  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
+  //RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
+
+  //GPIO_PinRemapConfig(GPIO_Remap_USART2, ENABLE); 
 
   /*Configure GPIO pin : PA */
-  GPIO_InitStruct.GPIO_Pin = GPIO_Pin_2|GPIO_Pin_3;
-  GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
-  GPIO_Init(GPIOA, &GPIO_InitStruct);
+  //GPIO_InitStruct.GPIO_Pin = GPIO_Pin_2|GPIO_Pin_3;
+ // GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
+  //GPIO_Init(GPIOA, &GPIO_InitStruct);
 }
 
 /* USER CODE BEGIN 2 */

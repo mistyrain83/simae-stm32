@@ -402,19 +402,14 @@
               <FilePath>.\User\Src\stm32f10x_it.c</FilePath>
             </File>
             <File>
-              <FileName>gpio.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\User\Inc\gpio.h</FilePath>
+              <FileName>io.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\Src\io.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f10x_conf.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\User\Inc\stm32f10x_conf.h</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f10x_it.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\User\Inc\stm32f10x_it.h</FilePath>
+              <FileName>usart2.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\Src\usart2.c</FilePath>
             </File>
           </Files>
         </Group>
