@@ -10,7 +10,6 @@
 static uint16_t g_InData;
 
 
-
 void SyncIO(void)
 {
 	uint16_t inData = 0;
@@ -26,3 +25,4 @@ void SyncIO(void)
 		g_InData = inData;
 	}
 }
+

@@ -407,9 +407,9 @@
               <FilePath>.\User\Src\io.c</FilePath>
             </File>
             <File>
-              <FileName>usart2.c</FileName>
+              <FileName>usart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\User\Src\usart2.c</FilePath>
+              <FilePath>.\User\Src\usart.c</FilePath>
             </File>
           </Files>
         </Group>

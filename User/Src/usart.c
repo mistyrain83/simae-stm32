@@ -15,7 +15,9 @@
  * ¬€Ã≥    £∫http://www.amobbs.com/forum-1008-1.html
  * Ã‘±¶    £∫http://firestm32.taobao.com
 **********************************************************************************/
-#include "usart2.h"
+#include "FreeRTOS.h"
+#include "task.h"
+#include "usart.h"
 #include <stdarg.h>
 
 /*
@@ -133,6 +135,45 @@ static char *itoa(int value, char *string, int radix)
     return string;
 
 } /* NCL_Itoa */
+
+uint16_t USART_Send(USART_TypeDef* USARTx, uint8_t *Data, uint16_t nBytes)
+{
+	uint16_t i;
+	GPIO_SetBits(GPIOA, GPIO_Pin_0);
+	vTaskDelay( 5/portTICK_RATE_MS );
+	for (i = 0; i < nBytes; i++) 
+	{
+		USART_SendData(USARTx, *(Data + i));
+		while( USART_GetFlagStatus(USARTx, USART_FLAG_TC) == RESET )
+		{
+			;
+		}
+	}
+	GPIO_ResetBits(GPIOA, GPIO_Pin_0);
+	return i;
+}
+
+uint16_t USART_Recv(USART_TypeDef* USARTx, uint8_t *Data, uint16_t nBytes)
+{
+	uint16_t rst;
+	uint16_t i;
+	for (i = 0; i < nBytes; i++) 
+	{
+		while(USART_GetFlagStatus(USARTx, USART_FLAG_RXNE) == RESET)
+		{
+			;
+		}
+		*(Data + i) = USART_ReceiveData(USARTx);
+		if ((*(Data + i) == 0x55))
+        {
+            rst = i;
+            break;
+        }
+		
+	}
+	return rst;
+}
+
 
 /*
  * ∫Ø ˝√˚£∫USART2_printf

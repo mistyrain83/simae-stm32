@@ -41,7 +41,8 @@
 //#include "stm32f1xx_hal.h"
 #include "main.h"
 #include "gpio.h"
-#include "usart2.h"
+#include "io.h"
+#include "usart.h"
 
 
 #define LED0_ON()   GPIO_SetBits(GPIOC,GPIO_Pin_0);
@@ -51,12 +52,12 @@
 static __IO uint32_t TimingDelay;
 
 /* Private function prototypes -----------------------------------------------*/
-void Delay(__IO uint32_t nTime);
-void STM_EMCAE_LEDAllOn(void);
-void STM_EMCAE_LEDAllOff(void);
+static void vLEDTask( void *pvParameters );
+static void vIOTask( void *pvParameters );
+static void vUSARTTask( void *pvParameters );
 
 /* Private functions ---------------------------------------------------------*/
-static void vLEDTask( void *pvParameters );
+
 
 /* USER CODE BEGIN 0 */
 
@@ -66,10 +67,8 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-  char c;
-  /* USER CODE END 1 */
 
-  /* MCU Configuration----------------------------------------------------------*/
+  /* USER CODE END 1 */
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
@@ -80,9 +79,11 @@ int main(void)
   /* USER CODE END 2 */
 
   /* USER CODE BEGIN 3 */
-  GPIO_SetBits(GPIOA, GPIO_Pin_0);
+  // rs485 oe - high send low recv
+  GPIO_ResetBits(GPIOA, GPIO_Pin_0);
   // off
   GPIO_SetBits(GPIOC, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3);
+  // disable relay off
   GPIO_SetBits(GPIOE, GPIO_Pin_8|GPIO_Pin_9|GPIO_Pin_10|GPIO_Pin_11 
                           |GPIO_Pin_12|GPIO_Pin_13);
 
@@ -93,111 +94,22 @@ int main(void)
     while (1);
   }
 
-
   /* Infinite loop */
 
   /* 建立任务 */
-  xTaskCreate( vLEDTask, ( signed portCHAR * ) "LED", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+3, NULL );
+  xTaskCreate( vLEDTask, ( signed portCHAR * ) "LED", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 4, NULL );
+
+  xTaskCreate( vIOTask, ( signed portCHAR * ) "IO", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 3, NULL );
+
+  xTaskCreate( vUSARTTask, ( signed portCHAR * ) "USART", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 5, NULL );
   /* 启动OS */
   vTaskStartScheduler();
-  
-  /*
-  while (1)
-  {
-	    GPIO_Write(GPIOC, GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3);
-		//GPIO_SetBits(GPIOE, GPIO_Pin_8|GPIO_Pin_9|GPIO_Pin_10|GPIO_Pin_11|GPIO_Pin_12|GPIO_Pin_13);
 
-		// Insert 500 ms delay
-		Delay(50);
-		GPIO_Write(GPIOC, GPIO_Pin_0 | GPIO_Pin_2 | GPIO_Pin_3);
-		//GPIO_ResetBits(GPIOE, GPIO_Pin_8);
-
-		Delay(50);
-		GPIO_Write(GPIOC, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_3);
-		//GPIO_ResetBits(GPIOE, GPIO_Pin_9);
-
-		Delay(50);
-		GPIO_Write(GPIOC, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2);
-		//GPIO_ResetBits(GPIOE, GPIO_Pin_10);
-
-		Delay(50);
-		GPIO_ResetBits(GPIOE, GPIO_Pin_11);
-		STM_EMCAE_LEDAllOn();
-//
-//		Delay(50);
-//		GPIO_ResetBits(GPIOE, GPIO_Pin_12);
-
-//		Delay(50);
-//		GPIO_ResetBits(GPIOE, GPIO_Pin_13);
-		USART_SendData(USART2, c);
-		USART2_printf(USART2, "\r\n This is a USART2_printf demo \r\n");
-		c++;
-		// Insert 500 ms delay
-		Delay(50);
-  }
-
-  */
   /* USER CODE END 3 */
 return 0;
 }
 
 /* USER CODE BEGIN 4 */
-
-/**
-  * @brief  Turns selected LED On.
-  * @param  Led: Specifies the Led to be set on. 
-  *   This parameter can be one of following parameters:
-  *     @arg LED1
-  *     @arg LED2
-  *     @arg LED3
-  *     @arg LED4  
-  * @retval None
-  */
-void STM_EMCAE_LEDAllOn(void)
-{
-	GPIO_WriteBit(GPIOC, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3, Bit_RESET);
-}
-
-/**
-  * @brief  Turns selected LED Off.
-  * @param  Led: Specifies the Led to be set off. 
-  *   This parameter can be one of following parameters:
-  *     @arg LED1
-  *     @arg LED2
-  *     @arg LED3
-  *     @arg LED4 
-  * @retval None
-  */
-void STM_EMCAE_LEDAllOff(void)
-{
-  GPIO_WriteBit(GPIOC, GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3, Bit_SET);  
-}
-
-/**
-  * @brief  Inserts a delay time.
-  * @param  nTime: specifies the delay time length, in milliseconds.
-  * @retval None
-  */
-void Delay(__IO uint32_t nTime)
-{ 
-  TimingDelay = nTime;
-
-  while(TimingDelay != 0);
-}
-
-/**
-  * @brief  Decrements the TimingDelay variable.
-  * @param  None
-  * @retval None
-  */
-void TimingDelay_Decrement(void)
-{
-  if (TimingDelay != 0x00)
-  { 
-    TimingDelay--;
-  }
-}
-/* USER CODE END 4 */
 
 void vLEDTask( void *pvParameters )
 {
@@ -207,8 +119,39 @@ void vLEDTask( void *pvParameters )
     vTaskDelay( 500/portTICK_RATE_MS );
     LED0_OFF();
     vTaskDelay( 500/portTICK_RATE_MS );
+	
   }
 }
+
+void vIOTask( void *pvParameters )
+{
+  for( ;; )
+  {
+    SyncIO();
+    vTaskDelay( 500/portTICK_RATE_MS );
+  }
+}
+
+void vUSARTTask( void *pvParameters )
+{
+	int i;
+	uint16_t num;
+	uint8_t str[16];
+	for(i = 0; i < 16; i ++)
+	{
+		str[i] = i;
+	}
+  for( ;; )
+  {
+    num = USART_Recv(USART2, str, 16);
+	if(num > 0)
+	{
+		USART_Send(USART2, str, num);
+	}
+  }
+}
+
+/* USER CODE END 4 */
 
 
 
