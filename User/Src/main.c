@@ -36,6 +36,7 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
+#include "temp.h"
 
 /* Includes ------------------------------------------------------------------*/
 //#include "stm32f1xx_hal.h"
@@ -55,11 +56,14 @@ static __IO uint32_t TimingDelay;
 static void vLEDTask( void *pvParameters );
 static void vIOTask( void *pvParameters );
 static void vUSARTTask( void *pvParameters );
+static void vTEMPTask( void *pvParameters );
 
 /* Private functions ---------------------------------------------------------*/
 
 
 /* USER CODE BEGIN 0 */
+/* ADC1转换的电压值通过MDA方式传到sram*/
+extern __IO u16 ADC_ConvertedValue;
 
 /* USER CODE END 0 */
 
@@ -76,6 +80,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   USART2_Config();
   //NVIC_Configuration();
+  Temp_ADC1_Init();
   /* USER CODE END 2 */
 
   /* USER CODE BEGIN 3 */
@@ -102,6 +107,9 @@ int main(void)
   xTaskCreate( vIOTask, ( signed portCHAR * ) "IO", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 3, NULL );
 
   xTaskCreate( vUSARTTask, ( signed portCHAR * ) "USART", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 5, NULL );
+
+  xTaskCreate( vTEMPTask, ( signed portCHAR * ) "TEMP", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 6, NULL );
+
   /* 启动OS */
   vTaskStartScheduler();
 
@@ -149,6 +157,23 @@ void vUSARTTask( void *pvParameters )
 		USART_Send(USART2, str, num);
 	}
   }
+}
+
+
+void vTEMPTask( void *pvParameters )
+{
+	/*计算后的温度值*/
+ 	uint16_t Current_Temp;
+	uint8_t str[3];
+	while(1)
+	{
+		vTaskDelay( 1000/portTICK_RATE_MS );
+		Current_Temp = (V25 - ADC_ConvertedValue)/AVG_SLOPE + 25;
+		
+		str[0] = (uint8_t)((Current_Temp>>8)&0x00FF);
+		str[1] = (uint8_t)(Current_Temp&0x00FF);
+		USART_Send(USART2, str, 2);
+	}
 }
 
 /* USER CODE END 4 */
