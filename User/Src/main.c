@@ -44,10 +44,11 @@
 #include "gpio.h"
 #include "io.h"
 #include "usart.h"
+#include "can.h"
 
 
-#define LED0_ON()   GPIO_SetBits(GPIOC,GPIO_Pin_0);
-#define LED0_OFF()  GPIO_ResetBits(GPIOC,GPIO_Pin_0);
+#define LED0_OFF()   GPIO_SetBits(GPIOC,GPIO_Pin_0);
+#define LED0_ON()  GPIO_ResetBits(GPIOC,GPIO_Pin_0);
 
 /* Private variables ---------------------------------------------------------*/
 static __IO uint32_t TimingDelay;
@@ -57,6 +58,7 @@ static void vLEDTask( void *pvParameters );
 static void vIOTask( void *pvParameters );
 static void vUSARTTask( void *pvParameters );
 static void vTEMPTask( void *pvParameters );
+static void vCANTask( void *pvParameters );
 
 /* Private functions ---------------------------------------------------------*/
 
@@ -81,6 +83,8 @@ int main(void)
   USART2_Config();
   //NVIC_Configuration();
   Temp_ADC1_Init();
+
+  USER_CAN_Init();
   /* USER CODE END 2 */
 
   /* USER CODE BEGIN 3 */
@@ -109,6 +113,8 @@ int main(void)
   xTaskCreate( vUSARTTask, ( signed portCHAR * ) "USART", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 5, NULL );
 
   xTaskCreate( vTEMPTask, ( signed portCHAR * ) "TEMP", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 6, NULL );
+
+  xTaskCreate( vCANTask, ( signed portCHAR * ) "CAN", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 7, NULL );
 
   /* Æô¶¯OS */
   vTaskStartScheduler();
@@ -173,6 +179,16 @@ void vTEMPTask( void *pvParameters )
 		str[0] = (uint8_t)((Current_Temp>>8)&0x00FF);
 		str[1] = (uint8_t)(Current_Temp&0x00FF);
 		USART_Send(USART2, str, 2);
+	}
+}
+
+void vCANTask( void *pvParameters )
+{
+	while(1)
+	{
+		vTaskDelay( 1000/portTICK_RATE_MS );
+		USER_CAN_Test();
+		vTaskDelay( 1000/portTICK_RATE_MS );
 	}
 }
 

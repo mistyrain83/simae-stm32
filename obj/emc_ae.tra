@@ -7,6 +7,7 @@
 ### List of Objects: adding '".\obj\io.o"'
 ### List of Objects: adding '".\obj\usart.o"'
 ### List of Objects: adding '".\obj\temp.o"'
+### List of Objects: adding '".\obj\can.o"'
 ### List of Objects: adding '".\obj\core_cm3.o"'
 ### List of Objects: adding '".\obj\system_stm32f10x.o"'
 ### List of Objects: adding '".\obj\startup_stm32f10x_hd.o"'
@@ -41,14 +42,14 @@
 ### List of Objects: adding '".\obj\queue.o"'
 ### List of Objects: adding '".\obj\tasks.o"'
 ### ADS-LD Command completed:
---cpu Cortex-M3 ".\obj\gpio.o" ".\obj\main.o" ".\obj\stm32f10x_it.o" ".\obj\io.o" ".\obj\usart.o" ".\obj\temp.o" ".\obj\core_cm3.o" ".\obj\system_stm32f10x.o" ".\obj\startup_stm32f10x_hd.o" ".\obj\misc.o" ".\obj\stm32f10x_adc.o" ".\obj\stm32f10x_bkp.o" ".\obj\stm32f10x_can.o" ".\obj\stm32f10x_cec.o" ".\obj\stm32f10x_crc.o" ".\obj\stm32f10x_dac.o" ".\obj\stm32f10x_dbgmcu.o" ".\obj\stm32f10x_dma.o" ".\obj\stm32f10x_exti.o" ".\obj\stm32f10x_flash.o" ".\obj\stm32f10x_fsmc.o" ".\obj\stm32f10x_gpio.o" ".\obj\stm32f10x_i2c.o" ".\obj\stm32f10x_iwdg.o" ".\obj\stm32f10x_pwr.o" ".\obj\stm32f10x_rcc.o" ".\obj\stm32f10x_rtc.o" ".\obj\stm32f10x_sdio.o" ".\obj\stm32f10x_spi.o" ".\obj\stm32f10x_tim.o" ".\obj\stm32f10x_usart.o" ".\obj\stm32f10x_wwdg.o" ".\obj\croutine.o" ".\obj\heap_2.o" ".\obj\timers.o" ".\obj\list.o" ".\obj\port.o" ".\obj\queue.o" ".\obj\tasks.o" --strict --scatter ".\obj\emc_ae.sct" 
+--cpu Cortex-M3 ".\obj\gpio.o" ".\obj\main.o" ".\obj\stm32f10x_it.o" ".\obj\io.o" ".\obj\usart.o" ".\obj\temp.o" ".\obj\can.o" ".\obj\core_cm3.o" ".\obj\system_stm32f10x.o" ".\obj\startup_stm32f10x_hd.o" ".\obj\misc.o" ".\obj\stm32f10x_adc.o" ".\obj\stm32f10x_bkp.o" ".\obj\stm32f10x_can.o" ".\obj\stm32f10x_cec.o" ".\obj\stm32f10x_crc.o" ".\obj\stm32f10x_dac.o" ".\obj\stm32f10x_dbgmcu.o" ".\obj\stm32f10x_dma.o" ".\obj\stm32f10x_exti.o" ".\obj\stm32f10x_flash.o" ".\obj\stm32f10x_fsmc.o" ".\obj\stm32f10x_gpio.o" ".\obj\stm32f10x_i2c.o" ".\obj\stm32f10x_iwdg.o" ".\obj\stm32f10x_pwr.o" ".\obj\stm32f10x_rcc.o" ".\obj\stm32f10x_rtc.o" ".\obj\stm32f10x_sdio.o" ".\obj\stm32f10x_spi.o" ".\obj\stm32f10x_tim.o" ".\obj\stm32f10x_usart.o" ".\obj\stm32f10x_wwdg.o" ".\obj\croutine.o" ".\obj\heap_2.o" ".\obj\timers.o" ".\obj\list.o" ".\obj\port.o" ".\obj\queue.o" ".\obj\tasks.o" --strict --scatter ".\obj\emc_ae.sct" 
 --autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
 --info sizes --info totals --info unused --info veneers 
  --list ".\lst\emc_ae.map" -o ".\obj\emc_ae.axf"### Preparing Environment (PrepEnvAds)
 ### ADS-LD Output File: '.\obj\emc_ae.axf'
 ### ADS-LD Command File: '.\obj\emc_ae.lnp'
 ### Checking for dirty Components...
-### Creating CmdFile '.\obj\emc_ae.lnp', Handle=0x0000052C
+### Creating CmdFile '.\obj\emc_ae.lnp', Handle=0x00000614
 ### Writing '.lnp' file
 ### ADS-LD Command file '.\obj\emc_ae.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.
