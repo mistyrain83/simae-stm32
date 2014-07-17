@@ -157,6 +157,23 @@
           <Name>-O14 -S0 -C0 -N00("ARM Cortex-M3") -D00(1BA00477) -L00(4) -FO7 -FD20000000 -FC800 -FN1 -FF0STM32F10x_512 -FS08000000 -FL080000)</Name>
         </SetRegEntry>
       </TargetDriverDllRegistry>
+      <Breakpoint>
+        <Bp>
+          <Number>0</Number>
+          <Type>0</Type>
+          <LineNumber>23</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>D:\GitHub\simae-stm32\User\Src\io.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+      </Breakpoint>
       <DebugFlag>
         <trace>0</trace>
         <periodic>1</periodic>
@@ -207,12 +224,12 @@
       <GroupNumber>1</GroupNumber>
       <FileNumber>1</FileNumber>
       <FileType>1</FileType>
-      <tvExp>0</tvExp>
+      <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>18</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>92</TopLine>
-      <CurrentLine>92</CurrentLine>
+      <TopLine>45</TopLine>
+      <CurrentLine>51</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\User\Src\gpio.c</PathWithFileName>
       <FilenameWithoutPath>gpio.c</FilenameWithoutPath>
@@ -223,10 +240,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>45</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>184</TopLine>
-      <CurrentLine>190</CurrentLine>
+      <TopLine>161</TopLine>
+      <CurrentLine>167</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\User\Src\main.c</PathWithFileName>
       <FilenameWithoutPath>main.c</FilenameWithoutPath>
@@ -237,10 +254,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>1</ColumnNumber>
+      <ColumnNumber>51</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>1</TopLine>
-      <CurrentLine>1</CurrentLine>
+      <TopLine>4</TopLine>
+      <CurrentLine>10</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\User\Src\stm32f10x_it.c</PathWithFileName>
       <FilenameWithoutPath>stm32f10x_it.c</FilenameWithoutPath>
@@ -251,10 +268,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>17</ColumnNumber>
+      <ColumnNumber>18</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>2</TopLine>
-      <CurrentLine>8</CurrentLine>
+      <TopLine>76</TopLine>
+      <CurrentLine>82</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\User\Src\io.c</PathWithFileName>
       <FilenameWithoutPath>io.c</FilenameWithoutPath>
@@ -293,10 +310,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>25</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>161</TopLine>
-      <CurrentLine>167</CurrentLine>
+      <TopLine>120</TopLine>
+      <CurrentLine>120</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\User\Src\can.c</PathWithFileName>
       <FilenameWithoutPath>can.c</FilenameWithoutPath>
@@ -305,7 +322,7 @@
 
   <Group>
     <GroupName>CMSIS</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <File>
@@ -314,10 +331,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>45</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>0</TopLine>
-      <CurrentLine>0</CurrentLine>
+      <TopLine>7</TopLine>
+      <CurrentLine>7</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\CMSIS\core_cm3.c</PathWithFileName>
       <FilenameWithoutPath>core_cm3.c</FilenameWithoutPath>
@@ -326,7 +343,7 @@
       <GroupNumber>2</GroupNumber>
       <FileNumber>9</FileNumber>
       <FileType>1</FileType>
-      <tvExp>0</tvExp>
+      <tvExp>1</tvExp>
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -349,10 +366,10 @@
       <FileType>2</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>30</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>158</TopLine>
-      <CurrentLine>158</CurrentLine>
+      <TopLine>48</TopLine>
+      <CurrentLine>53</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\StartUp\startup_stm32f10x_hd.s</PathWithFileName>
       <FilenameWithoutPath>startup_stm32f10x_hd.s</FilenameWithoutPath>
@@ -361,7 +378,7 @@
 
   <Group>
     <GroupName>StdPeriph_Driver</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <File>
@@ -727,10 +744,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>53</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>0</TopLine>
-      <CurrentLine>0</CurrentLine>
+      <TopLine>235</TopLine>
+      <CurrentLine>235</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\FreeRTOS\timers.c</PathWithFileName>
       <FilenameWithoutPath>timers.c</FilenameWithoutPath>
@@ -755,10 +772,10 @@
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>49</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>0</TopLine>
-      <CurrentLine>0</CurrentLine>
+      <TopLine>429</TopLine>
+      <CurrentLine>435</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\FreeRTOS\port.c</PathWithFileName>
       <FilenameWithoutPath>port.c</FilenameWithoutPath>
@@ -767,7 +784,7 @@
       <GroupNumber>5</GroupNumber>
       <FileNumber>39</FileNumber>
       <FileType>1</FileType>
-      <tvExp>0</tvExp>
+      <tvExp>1</tvExp>
       <Focus>0</Focus>
       <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -781,12 +798,12 @@
       <GroupNumber>5</GroupNumber>
       <FileNumber>40</FileNumber>
       <FileType>1</FileType>
-      <tvExp>0</tvExp>
+      <tvExp>1</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>0</ColumnNumber>
+      <ColumnNumber>48</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>0</TopLine>
-      <CurrentLine>0</CurrentLine>
+      <TopLine>115</TopLine>
+      <CurrentLine>115</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>.\FreeRTOS\tasks.c</PathWithFileName>
       <FilenameWithoutPath>tasks.c</FilenameWithoutPath>
@@ -794,9 +811,35 @@
   </Group>
 
   <AlienFiles>
+    <PathWithFilename>D:\GitHub\simae-stm32\User\Inc\stm32f10x_conf.h</PathWithFilename>
+    <TopLine>45</TopLine>
+    <CurrentLine>45</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
+
+  <AlienFiles>
     <PathWithFilename>D:\GitHub\simae-stm32\User\Inc\can.h</PathWithFilename>
     <TopLine>1</TopLine>
-    <CurrentLine>7</CurrentLine>
+    <CurrentLine>6</CurrentLine>
     <Constant>0</Constant>
     <WindowPosition>
       <length>0</length>
@@ -824,13 +867,31 @@
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
       <Size>100</Size>
-      <ActiveTab>2</ActiveTab>
+      <ActiveTab>3</ActiveTab>
       <Documents>
         <Doc>
+          <Name>.\FreeRTOS\port.c</Name>
+          <ColumnNumber>49</ColumnNumber>
+          <TopLine>429</TopLine>
+          <CurrentLine>435</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\FreeRTOS\tasks.c</Name>
+          <ColumnNumber>48</ColumnNumber>
+          <TopLine>115</TopLine>
+          <CurrentLine>115</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\StartUp\startup_stm32f10x_hd.s</Name>
+          <ColumnNumber>30</ColumnNumber>
+          <TopLine>48</TopLine>
+          <CurrentLine>53</CurrentLine>
+        </Doc>
+        <Doc>
           <Name>.\User\Src\main.c</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>184</TopLine>
-          <CurrentLine>190</CurrentLine>
+          <ColumnNumber>45</ColumnNumber>
+          <TopLine>161</TopLine>
+          <CurrentLine>167</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\User\Src\usart.c</Name>
@@ -839,28 +900,52 @@
           <CurrentLine>18</CurrentLine>
         </Doc>
         <Doc>
-          <Name>.\StartUp\startup_stm32f10x_hd.s</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>158</TopLine>
-          <CurrentLine>158</CurrentLine>
-        </Doc>
-        <Doc>
           <Name>.\User\Src\can.c</Name>
-          <ColumnNumber>0</ColumnNumber>
-          <TopLine>161</TopLine>
-          <CurrentLine>167</CurrentLine>
+          <ColumnNumber>25</ColumnNumber>
+          <TopLine>120</TopLine>
+          <CurrentLine>120</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\User\Src\io.c</Name>
-          <ColumnNumber>17</ColumnNumber>
-          <TopLine>2</TopLine>
-          <CurrentLine>8</CurrentLine>
+          <ColumnNumber>18</ColumnNumber>
+          <TopLine>76</TopLine>
+          <CurrentLine>82</CurrentLine>
         </Doc>
         <Doc>
           <Name>.\User\Inc\can.h</Name>
-          <ColumnNumber>0</ColumnNumber>
+          <ColumnNumber>7</ColumnNumber>
           <TopLine>1</TopLine>
+          <CurrentLine>6</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\CMSIS\core_cm3.c</Name>
+          <ColumnNumber>45</ColumnNumber>
+          <TopLine>7</TopLine>
           <CurrentLine>7</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\User\Src\gpio.c</Name>
+          <ColumnNumber>18</ColumnNumber>
+          <TopLine>45</TopLine>
+          <CurrentLine>51</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\User\Src\stm32f10x_it.c</Name>
+          <ColumnNumber>51</ColumnNumber>
+          <TopLine>4</TopLine>
+          <CurrentLine>10</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\User\Inc\stm32f10x_conf.h</Name>
+          <ColumnNumber>29</ColumnNumber>
+          <TopLine>45</TopLine>
+          <CurrentLine>45</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>.\FreeRTOS\timers.c</Name>
+          <ColumnNumber>53</ColumnNumber>
+          <TopLine>235</TopLine>
+          <CurrentLine>235</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>

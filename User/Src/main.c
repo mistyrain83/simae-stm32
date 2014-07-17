@@ -50,12 +50,16 @@
 #define LED0_OFF()   GPIO_SetBits(GPIOC,GPIO_Pin_0);
 #define LED0_ON()  GPIO_ResetBits(GPIOC,GPIO_Pin_0);
 
+#define LED2_OFF()   GPIO_SetBits(GPIOC,GPIO_Pin_2);
+#define LED2_ON()  GPIO_ResetBits(GPIOC,GPIO_Pin_2);
+
 /* Private variables ---------------------------------------------------------*/
 static __IO uint32_t TimingDelay;
 
 /* Private function prototypes -----------------------------------------------*/
 static void vLEDTask( void *pvParameters );
 static void vIOTask( void *pvParameters );
+static void vRELYTask( void  );
 static void vUSARTTask( void *pvParameters );
 static void vTEMPTask( void *pvParameters );
 static void vCANTask( void *pvParameters );
@@ -106,15 +110,17 @@ int main(void)
   /* Infinite loop */
 
   /* 建立任务 */
-  xTaskCreate( vLEDTask, ( signed portCHAR * ) "LED", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 4, NULL );
+  xTaskCreate( vLEDTask, ( signed portCHAR * ) "LED", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 5, NULL );
 
-  xTaskCreate( vIOTask, ( signed portCHAR * ) "IO", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 3, NULL );
+  xTaskCreate( vIOTask, ( signed portCHAR * ) "IO", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 4, NULL );
 
-  xTaskCreate( vUSARTTask, ( signed portCHAR * ) "USART", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 5, NULL );
+  //xTaskCreate( vRELYTask, ( signed portCHAR * ) "RELY", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 3, NULL );
 
-  xTaskCreate( vTEMPTask, ( signed portCHAR * ) "TEMP", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 6, NULL );
+  //xTaskCreate( vUSARTTask, ( signed portCHAR * ) "USART", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 6, NULL );
 
-  xTaskCreate( vCANTask, ( signed portCHAR * ) "CAN", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 7, NULL );
+  //xTaskCreate( vTEMPTask, ( signed portCHAR * ) "TEMP", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 7, NULL );
+
+  //xTaskCreate( vCANTask, ( signed portCHAR * ) "CAN", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 8, NULL );
 
   /* 启动OS */
   vTaskStartScheduler();
@@ -130,8 +136,10 @@ void vLEDTask( void *pvParameters )
   for( ;; )
   {
     LED0_ON();
+	LED2_OFF();
     vTaskDelay( 500/portTICK_RATE_MS );
     LED0_OFF();
+	LED2_ON();
     vTaskDelay( 500/portTICK_RATE_MS );
 	
   }
@@ -139,11 +147,38 @@ void vLEDTask( void *pvParameters )
 
 void vIOTask( void *pvParameters )
 {
+	vRELYTask();
+	
   for( ;; )
   {
     SyncIO();
     vTaskDelay( 500/portTICK_RATE_MS );
   }
+}
+
+void vRELYTask( void )
+{
+	uint16_t i = 0;
+  for(i = 0 ; i < 5; i++)
+  {
+  	vTaskDelay( 1000/portTICK_RATE_MS );
+    GPIO_ResetBits(GPIOE, GPIO_Pin_8);
+    vTaskDelay( 2000/portTICK_RATE_MS );
+	GPIO_ResetBits(GPIOE, GPIO_Pin_9);
+    vTaskDelay( 2000/portTICK_RATE_MS );
+	GPIO_ResetBits(GPIOE, GPIO_Pin_10);
+    vTaskDelay( 2000/portTICK_RATE_MS );
+	GPIO_ResetBits(GPIOE, GPIO_Pin_11);
+    vTaskDelay( 2000/portTICK_RATE_MS );
+	GPIO_ResetBits(GPIOE, GPIO_Pin_12);
+    vTaskDelay( 2000/portTICK_RATE_MS );
+	GPIO_ResetBits(GPIOE, GPIO_Pin_13);
+    vTaskDelay( 2000/portTICK_RATE_MS );
+	GPIO_SetBits(GPIOE, GPIO_Pin_8|GPIO_Pin_9|GPIO_Pin_10|GPIO_Pin_11 
+                          |GPIO_Pin_12|GPIO_Pin_13);
+  }
+  GPIO_SetBits(GPIOE, GPIO_Pin_8|GPIO_Pin_9|GPIO_Pin_10|GPIO_Pin_11 
+                          |GPIO_Pin_12|GPIO_Pin_13);
 }
 
 void vUSARTTask( void *pvParameters )
